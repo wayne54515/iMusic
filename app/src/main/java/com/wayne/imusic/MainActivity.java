@@ -77,14 +77,12 @@ public class MainActivity extends AppCompatActivity {
                                         );
                                         musicListItems.add(musicItem);
                                     }
-                                    System.out.println("test3");
 
                                     recyclerViewAdapter = new MusicAdapter(musicListItems, getApplicationContext());
                                     recyclerView.setAdapter(recyclerViewAdapter);
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
-                                System.out.println("test4");
 
                             }
                         }, new Response.ErrorListener() {
