@@ -66,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onResponse(String response) {
                                 try {
+
+                                    musicListItems.clear();
                                     JSONObject jsonObject = new JSONObject(response);
                                     JSONArray jsonArray = jsonObject.getJSONArray("results");
 
@@ -73,7 +75,9 @@ public class MainActivity extends AppCompatActivity {
                                         JSONObject object = jsonArray.getJSONObject(i);
                                         MusicListItem musicItem = new MusicListItem(
                                                 object.getString("trackName"),
-                                                object.getString("previewUrl")
+                                                object.getString("artistName"),
+                                                object.getString("previewUrl"),
+                                                object.getString("artworkUrl100")
                                         );
                                         musicListItems.add(musicItem);
                                     }
